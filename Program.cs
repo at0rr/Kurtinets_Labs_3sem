@@ -26,6 +26,7 @@ namespace project{
             string repeat = "y";
             while (repeat == "y")
             {
+                System.Console.WriteLine("Введите коэффициенты: ");
                 double a = IsNum();
                 double b = IsNum();
                 double c = IsNum();
