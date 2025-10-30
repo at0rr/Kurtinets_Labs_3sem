@@ -1,110 +1,116 @@
 ﻿using System;
 
-namespace project{
+public interface IPrint
+{
+    void Print();
+}
 
-    class Program{
+public abstract class GeometrFigure : IPrint
+{
+    public abstract double Area();
+    public override string ToString() => "Такой фигуры нет в программе";
 
-        static double IsNum()
+    public virtual double Length
+    {
+        get => 0;
+        set { }
+    }
+
+    public virtual double Width
+    {
+        get => 0;
+        set { }
+    }
+
+    public virtual double Radius
+    {
+        get => 0;
+        set { }
+    }
+
+    public virtual void Print() => System.Console.WriteLine(ToString());
+
+    protected void Check(double val) { if (val < 0) throw new ArgumentException("Значение не может быть меньше 0"); }
+}
+
+class Rect : GeometrFigure
+{
+
+    public override double Length { get; set; }
+
+    public override double Width { get; set; }
+
+    public Rect(double length = 0, double width = 0)
+    {
+        Check(length);  Check(width);
+        Length = length;
+        Width = width;
+    }
+
+    public override double Area() => Length * Width;
+
+    public override string ToString() => $"Прямоугольник: Длина = {Length}, высота = {Width}, площадь = {Area()}";
+
+    public override void Print() => System.Console.WriteLine(ToString());
+}
+
+class Square : Rect
+{
+    public Square(double side = 0) : base(side, side) { }
+    public override string ToString() => $"Квадрат: Сторона = {Length}, площадь = {Area()}";
+}
+
+class Circle : GeometrFigure
+{
+    public override double Radius { get; set; }
+
+    public Circle(double rad = 0)
+    {
+        Check(rad);
+        Radius = rad;
+    }
+
+    public override double Area() => Math.PI * Radius * Radius;
+
+    public override string ToString() => $"Круг: Радиус = {Radius}, площадь = {Area()}";
+}
+
+class Program
+{
+    static void Main()
+    {
+        string next = "y";
+        while (next == "y")
         {
-            double value;
-            while (!double.TryParse(Console.ReadLine(), out value))
+            System.Console.WriteLine("Выберите фигуру для подсчёта площади: 1 - Прямоугольник, 2 - Квадрат, 3 - Круг");
+            if (int.TryParse(Console.ReadLine(), out int choose))
             {
-                System.Console.WriteLine("Ошибка ввода! Введите значение заново");
+                switch (choose)
+                {
+                    case 1:
+                        System.Console.Write("Длина - ");
+                        double length = Convert.ToDouble(Console.ReadLine());
+                        System.Console.Write("Высота - ");
+                        double width = Convert.ToDouble(Console.ReadLine());
+                        Rect rect = new Rect(length, width);
+                        rect.Print();
+                        break;
+                    case 2:
+                        System.Console.Write("Сторона - ");
+                        double side = Convert.ToDouble(Console.ReadLine());
+                        Square square = new Square(side);
+                        square.Print();
+                        break;
+                    case 3:
+                        System.Console.Write("Радиус - ");
+                        double radius = Convert.ToDouble(Console.ReadLine());
+                        Circle circle = new Circle(radius);
+                        circle.Print();
+                        break;
+                }
             }
-            return value;
-        }
-
-        static void NoSolutions()
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            System.Console.WriteLine("Решений нет");
-            Console.ResetColor();
-        }
-
-        static void Main()
-        {
-            string repeat = "y";
-            while (repeat == "y")
-            {
-                System.Console.WriteLine("Введите коэффициенты: ");
-                double a = IsNum();
-                double b = IsNum();
-                double c = IsNum();
-
-                if (a == 0)
-                {
-                    NoSolutions();
-                    continue;
-                }
-
-                double t1, t2;
-
-                double disc = Math.Pow(b, 2) - 4 * a * c;
-                if (disc < 0)
-                {
-                    NoSolutions();
-                    continue;
-                }
-                else if (disc == 0)
-                {
-                    t1 = -b / (2 * a);
-                    if (t1 < 0)
-                    {
-                        NoSolutions();
-                        continue;
-                    }
-
-                    System.Console.Write("Корни: ");
-
-                    if (t1 == 0)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        System.Console.Write("0 ");
-                        Console.ResetColor();
-                    }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        System.Console.Write("{0} {1} ", Math.Sqrt(t1), (-Math.Sqrt(t1)));
-                        Console.ResetColor();
-                    }
-                }
-                else
-                {
-                    disc = Math.Sqrt(disc);
-                    t1 = (-b + disc) / (2 * a);
-                    t2 = (-b - disc) / (2 * a);
-                    if (t1 >= 0 || t2 >= 0)
-                    {
-                        System.Console.Write("Корни: ");
-                    }
-                    if (t1 == 0 || t2 == 0)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        System.Console.Write("0 ");
-                        Console.ResetColor();
-                    }
-                    if (t1 > 0)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        System.Console.Write("{0} {1} ", Math.Sqrt(t1), (-Math.Sqrt(t1)));
-                        Console.ResetColor();
-                    }
-                    if (t2 > 0)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        System.Console.Write("{0} {1} ", Math.Sqrt(t2), (-Math.Sqrt(t2)));
-                        Console.ResetColor();
-                    }
-                    if (t1 < 0 && t2 < 0)
-                    {
-                        NoSolutions();
-                    }
-                }
-
-                System.Console.WriteLine("Хотите продолжить? (y/n)");
-                repeat = Console.ReadLine();
-            }
+            System.Console.WriteLine("Повторим? (y/n)");
+            next = Console.ReadLine();
         }
     }
-};
+}
