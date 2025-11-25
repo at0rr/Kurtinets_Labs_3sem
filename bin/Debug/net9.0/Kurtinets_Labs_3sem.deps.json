@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "Kurtinets_Labs_3sem/1.0.0": {
+        "runtime": {
+          "Kurtinets_Labs_3sem.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Kurtinets_Labs_3sem/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
