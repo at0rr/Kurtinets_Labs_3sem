@@ -1,13 +1,11 @@
+/home/at0r/Kurtinets_Labs_3sem/obj/Debug/net9.0/Kurtinets_Labs_3sem.GeneratedMSBuildEditorConfig.editorconfig
+/home/at0r/Kurtinets_Labs_3sem/obj/Debug/net9.0/Kurtinets_Labs_3sem.csproj.CoreCompileInputs.cache
+/home/at0r/Kurtinets_Labs_3sem/obj/Debug/net9.0/Kurtinets_Labs_3sem.sourcelink.json
 /home/at0r/Kurtinets_Labs_3sem/bin/Debug/net9.0/Kurtinets_Labs_3sem
 /home/at0r/Kurtinets_Labs_3sem/bin/Debug/net9.0/Kurtinets_Labs_3sem.deps.json
 /home/at0r/Kurtinets_Labs_3sem/bin/Debug/net9.0/Kurtinets_Labs_3sem.runtimeconfig.json
 /home/at0r/Kurtinets_Labs_3sem/bin/Debug/net9.0/Kurtinets_Labs_3sem.dll
 /home/at0r/Kurtinets_Labs_3sem/bin/Debug/net9.0/Kurtinets_Labs_3sem.pdb
-/home/at0r/Kurtinets_Labs_3sem/obj/Debug/net9.0/Kurtinets_Labs_3sem.GeneratedMSBuildEditorConfig.editorconfig
-/home/at0r/Kurtinets_Labs_3sem/obj/Debug/net9.0/Kurtinets_Labs_3sem.AssemblyInfoInputs.cache
-/home/at0r/Kurtinets_Labs_3sem/obj/Debug/net9.0/Kurtinets_Labs_3sem.AssemblyInfo.cs
-/home/at0r/Kurtinets_Labs_3sem/obj/Debug/net9.0/Kurtinets_Labs_3sem.csproj.CoreCompileInputs.cache
-/home/at0r/Kurtinets_Labs_3sem/obj/Debug/net9.0/Kurtinets_Labs_3sem.sourcelink.json
 /home/at0r/Kurtinets_Labs_3sem/obj/Debug/net9.0/Kurtinets_Labs_3sem.dll
 /home/at0r/Kurtinets_Labs_3sem/obj/Debug/net9.0/refint/Kurtinets_Labs_3sem.dll
 /home/at0r/Kurtinets_Labs_3sem/obj/Debug/net9.0/Kurtinets_Labs_3sem.pdb
