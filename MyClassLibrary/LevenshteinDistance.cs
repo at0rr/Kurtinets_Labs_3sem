@@ -26,6 +26,11 @@ public static class LevenshteinDistance
                 int substitution = matrix[i - 1, j - 1] + cost;
 
                 matrix[i, j] = Math.Min(Math.Min(deletion, insertion), substitution);
+
+                if (i > 1 && j > 1 && (ftWord[i - 1] == secWord[j - 2]) && (ftWord[i - 2] == secWord[j - 1]))
+                {
+                    matrix[i, j] = Math.Min(matrix[i, j], matrix[i - 2, j - 2] + 1);
+                }
             }
         }
 
@@ -37,6 +42,10 @@ public static class LevenshteinDistance
         System.Console.WriteLine(Calculate("слово", "строка"));
         System.Console.WriteLine(Calculate("кот", "кит"));
         System.Console.WriteLine(Calculate("", "привет"));
-        System.Console.WriteLine(Calculate("hello", "hello"));
+
+        System.Console.WriteLine(Calculate("кот", "кто"));
+        System.Console.WriteLine(Calculate("строка", "соркта"));
+        System.Console.WriteLine(Calculate("абв", "бав"));
+        System.Console.WriteLine(Calculate("hello", "helo"));
     }
 }
