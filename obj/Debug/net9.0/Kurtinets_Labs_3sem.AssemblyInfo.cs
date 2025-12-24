@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Kurtinets_Labs_3sem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7ca57496900d1bd7529e3ee62e06a1d60215455")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1730d5418f3665de914edfc8e5fcedf9a0b30ada")]
 [assembly: System.Reflection.AssemblyProductAttribute("Kurtinets_Labs_3sem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Kurtinets_Labs_3sem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
